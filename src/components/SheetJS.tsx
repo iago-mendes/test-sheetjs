@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import XLSX from 'xlsx'
 
+import sheetColumns from '../../db/sheetColumns.json'
+
 const fileTypes =
 [
 	'xlsx',
@@ -20,7 +22,7 @@ const SheetJS: React.FC = () =>
 			parseFile()
 	}, [file])
 
-	async function parseFile()
+	function parseFile()
 	{
 		const reader = new FileReader()
 		const rABS = !!reader.readAsBinaryString
@@ -46,6 +48,28 @@ const SheetJS: React.FC = () =>
 			reader.readAsArrayBuffer(file)
 	}
 
+	function createTemplate()
+	{
+		let data: string[][] = []
+
+		for (let i = 0; i < 10; i++)
+		{
+			let row: string[] = []
+
+			for (let j = 0; j < sheetColumns.length; j++)
+				row.push('')
+			
+			data.push(row)
+		}
+
+		const ws = XLSX.utils.aoa_to_sheet(data)
+		
+		const wb = XLSX.utils.book_new()
+		XLSX.utils.book_append_sheet(wb, ws, 'SheetJS')
+
+		XLSX.writeFile(wb, 'sheetjs.xlsx')
+	}
+
 	return (
 		<div>
 			<h1>Upload a spreadsheet</h1>
@@ -56,6 +80,8 @@ const SheetJS: React.FC = () =>
 				accept={fileTypes}
 				onChange={e => setFile(e.target.files[0])}
 			/>
+			<br /> <br />
+			<button onClick={createTemplate} >Download template</button>
 		</div>
 	)
 }

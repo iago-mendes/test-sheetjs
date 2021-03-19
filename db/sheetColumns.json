@@ -1,0 +1,52 @@
+[
+	{
+		"name": "Código",
+		"key": 0,
+		"field": "codigo"
+	},
+	{
+		"name": "Nome",
+		"key": 1,
+		"field": "nome"
+	},
+	{
+		"name": "Comissão",
+		"key": 3,
+		"field": "comissao"
+	},
+	{
+		"name": "Unidade",
+		"key": 2,
+		"field": "unidade"
+	},
+	{
+		"name": "Peso",
+		"key": 4,
+		"field": "peso"
+	},
+	{
+		"name": "Volume",
+		"key": 5,
+		"field": "volume"
+	},
+	{
+		"name": "IPI",
+		"key": 6,
+		"field": "ipi"
+	},
+	{
+		"name": "ST",
+		"key": 7,
+		"field": "st"
+	},
+	{
+		"name": "Tabela Padrão",
+		"key": 8,
+		"field": "tabelas-12345"
+	},
+	{
+		"name": "Tabela Especial",
+		"key": 9,
+		"field": "tabelas-54321"
+	}
+]
