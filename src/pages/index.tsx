@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import SheetJS from '../components/SheetJS'
 
 import Container from '../styles/pages/index'
 
@@ -9,7 +10,7 @@ const Home: React.FC = () =>
 			<Head>
 				<title>Home</title>
 			</Head>
-			<h1>Hello, world!</h1>
+			<SheetJS />
 		</Container>
 	)
 }
